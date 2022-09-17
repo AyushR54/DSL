@@ -1,23 +1,23 @@
-def addition(mat1, mat2):
+def addition(mat1, mat2, n):
     matrix = []
-    for rows in range(2):
+    for rows in range(n):
         row = []
-        for cols in range(2):
+        for cols in range(n):
             col = mat1[rows][cols] + mat2[rows][cols]
             row.append(col)
         matrix.append(row)
-    for i in range(2):
+    for i in range(n):
         print(matrix[i])
 
-def subtraction(mat1, mat2):
+def subtraction(mat1, mat2, n):
     matrix = []
-    for rows in range(2):
+    for rows in range(n):
         row = []
-        for cols in range(2):
+        for cols in range(n):
             col = mat1[rows][cols] - mat2[rows][cols]
             row.append(col)
         matrix.append(row)
-    for i in range(2):
+    for i in range(n):
         print(matrix[i])
 
 def multiplication(mat1, mat2, n):
@@ -70,7 +70,7 @@ for i in range(n):
     for j in range(n):
         val = int(input())
         temp.append(val)
-    mat1.append(temp)
+    mat2.append(temp)
 for r in mat2:
     print(r)
 print()
@@ -86,14 +86,22 @@ while(True):
                    "PRESS 0 TO EXIT.\n"))
     if op == 0:
         break
-    if op == 1:
-        addition(mat1, mat2)
-    if op == 1:
-        subtraction(mat1, mat2)
-    if op == 1:
+    elif op == 1:
+        addition(mat1, mat2, n)
+    elif op == 2:
+        subtraction(mat1, mat2, n)
+    elif op == 3:
         multiplication(mat1, mat2, n)
-    if op == 1:
-        transpose(mat1, n)
+    elif op == 4:
+        print("SELECT FROM THE GIVEN OPTION")
+        m = int(input("1. Matrix-1"
+                      "2. Matrix-2\n"))
+        if m == 1:
+            transpose(mat1, n)
+        if m == 2:
+            transpose(mat2, n)
+        else:
+            print("Wrong input")
     else:
         print("Wrong input!")
 print()
