@@ -26,8 +26,8 @@ def absent(total, present):
 
 def highestFrequency(n, mks):
     max = 1
-    count = 0
     for i in range(n):
+        count = 0
         mks[i]
         for j in range(n):
             if mks[j] == mks[i]:
@@ -35,7 +35,6 @@ def highestFrequency(n, mks):
         if count > max :
             max = count
             ans = mks[i]
-        count = 0
     print("Score with highest frequency =", ans)
     
 
@@ -55,8 +54,10 @@ while True:
                    "2.Highest score and lowest score of class\n"
                    "3.Count of students who were absent for the test\n"
                    "4.Display mark with highest frequency\n"
-                   "Press 0 to exit\n"))    
-    if op == 1:
+                   "Press 0 to exit\n")) 
+    if op == 0:
+        exit()   
+    elif op == 1:
         average(n, marks)
     elif op == 2:
         highestLowest(n, marks)
@@ -64,7 +65,5 @@ while True:
         absent(total, n)
     elif op == 4:
         highestFrequency(n, marks)
-    elif op == 0:
-        exit()
     else:
         print("Wrong input!")
