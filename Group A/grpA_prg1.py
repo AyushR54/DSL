@@ -52,7 +52,7 @@ def CBnotFootball(cricket, badminton, football):
     for a in range(clen):
         cricket[a]
         for b in range(blen):
-            if cricket[a] == badminton[b]:
+            if badminton[b] == cricket[a]:
                 for c in range(flen):
                     if badminton[b] == football[c]:
                         cfb += 1
@@ -113,10 +113,10 @@ print("SELECT FROM THE FOLLOWING OPTIONS:")
 while True:
     print()
     op = int(input("1.List of students who play both cricket and badminton\n"
-       "2.List of students who play either cricket or badminton but not both \n"
-       "3.Number of students who play neither cricket nor badminton\n"
-       "4.Number of students who play cricket and football but not badminton\n"
-       "Press 0 to exit\n"))
+                   "2.List of students who play either cricket or badminton but not both \n"
+                   "3.Number of students who play neither cricket nor badminton\n"
+                   "4.Number of students who play cricket and football but not badminton\n"
+                   "Press 0 to exit\n"))
     if op == 1:
         cricketBadminton(cricket, badminton)
     elif op == 2:
