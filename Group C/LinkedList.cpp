@@ -17,22 +17,22 @@ void printlist(struct Node * ptr) {
 
 
 int main() {
-    Node * first = NULL;
+    Node * head = NULL;
     Node * second = NULL;
     Node * third = NULL;
     Node * fourth = NULL;
     Node * fifth = NULL;
     Node * sixth = NULL;
 
-    first = new Node();
+    head = new Node();
     second = new Node();
     third = new Node();
     fourth = new Node();
     fifth= new Node();
     sixth = new Node();
 
-    first -> n = 1;
-    first -> next = second;
+    head -> n = 1;
+    head -> next = second;
     second -> n = 2;
     second -> next = third;
     third -> n = 3;
@@ -44,19 +44,19 @@ int main() {
     sixth -> n = 6;
     sixth -> next = NULL;
     cout<<"Origional node \n";
-    printlist(first);
+    printlist(head);
 
 
     // Enter node in the beginning.
     Node * newNode1 = new Node();
     newNode1 -> n = 7;
-    newNode1 -> next = first;
-    first = newNode1;
+    newNode1 -> next = head;
+    head = newNode1;
 
     // Enter node at the end.
     Node * newNode2 = new Node();
     newNode2 -> n = 8;
-    struct Node * temp = first;
+    struct Node * temp = head;
     while (temp -> next != NULL) {
         temp = temp -> next;
     }
@@ -67,7 +67,7 @@ int main() {
     int pos = 2;
     Node * newNode3 = new Node();
     newNode3 -> n = 9;
-    struct Node * ptr = first;
+    struct Node * ptr = head;
     for (int i = 0; i < pos; i++) {
         if (ptr != NULL) {
             ptr = ptr -> next;
@@ -76,13 +76,13 @@ int main() {
     newNode3 -> next = ptr -> next;
     ptr -> next = newNode3;
     cout<<"After Adding Node \n";
-    printlist(first);
+    printlist(head);
 
     // Delete a node from beginning.
-    first = first -> next;
+    head = head -> next;
 
     // Delete a node from the end.
-    temp = first;
+    temp = head;
     while (temp -> next -> next != NULL) {
         temp = temp -> next;
     }
@@ -90,16 +90,16 @@ int main() {
 
     // Delete a node from middle.
     int pos1 = 1;
-    temp = first;
+    temp = head;
     for (int i = 0; i < pos1; i++) {
         if (temp != NULL) {
             temp = temp -> next;
         }
     }
     temp -> next = temp -> next -> next; 
-    cout<<"After Deleteing Node\n";
+    cout<<"After Deleteing Pointer Node\n";
 
-    printlist(first);
+    printlist(head);
 
     return 0;
 }
