@@ -31,24 +31,24 @@ void display(struct Node * ptr) {
 
 int main() {
     Node * president = NULL;
-    Node * second = NULL;
-    Node * secretary = NULL;
+    Node * viceprecident = NULL;
+    Node * member = NULL;
 
     president = new Node();
-    second = new Node();
-    secretary = new Node();
+    viceprecident = new Node();
+    member = new Node();
 
     president -> PRN = "F21113028";
     president -> Name = "Ayush";
-    president -> next = second;
+    president -> next = viceprecident;
 
-    second -> PRN = "F21113026";
-    second -> Name = "Viren";
-    second -> next = secretary;
+    viceprecident -> PRN = "F21113026";
+    viceprecident -> Name = "Viren";
+    viceprecident -> next = member;
 
-    secretary -> PRN = "F21113000";
-    secretary -> Name = "XYZ";
-    secretary -> next = NULL;
+    member -> PRN = "F21113000";
+    member -> Name = "XYZ";
+    member -> next = NULL;
 
     Delete(president);
     display(president);
